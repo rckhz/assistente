@@ -16,7 +16,7 @@ public static class Constants
     public const int MaxLogCharsReturned = 4000;
     public const int MaxFileSizeForSearchBytes = 1_000_000;
     public const int MaxSearchMatches = 50;
-
+    public const int MaxOutputChars = 8000;
     public static readonly string[] SkipDirsOnSearch =
     {
         "node_modules", ".git", "bin", "obj", "dist", ".vs", ".idea"

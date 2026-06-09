@@ -14,3 +14,4 @@ C:\saves\the_bolotas\the_bolotas\obj\Debug\net10.0\the_bolotas.genruntimeconfig.
 C:\saves\the_bolotas\the_bolotas\obj\Debug\net10.0\ref\the_bolotas.dll
 C:\saves\the_bolotas\the_bolotas\bin\Debug\net10.0\config.json
 C:\saves\the_bolotas\the_bolotas\bin\Debug\net10.0\historico.json
+C:\saves\the_bolotas\the_bolotas\obj\Debug\net10.0\the_bolotas.sourcelink.json

@@ -10,4 +10,12 @@ public static class UI
         Console.Write(texto);
         Console.ForegroundColor = anterior;
     }
+    public static bool Confirm(string pergunta)
+    {
+        WriteColor($"{pergunta} (s/n): ", ConsoleColor.Yellow);
+
+        var resposta = Console.ReadLine();
+
+        return resposta?.Trim().ToLower() == "s";
+    }
 }

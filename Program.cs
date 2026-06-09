@@ -8,6 +8,7 @@ namespace the_bolotas;
 
 internal class Program
 {
+    [STAThread]
     static async Task Main()
     {
         var baseDir = AppContext.BaseDirectory;
@@ -16,7 +17,7 @@ internal class Program
         var history = new HistoryManager(baseDir);
         var client = new ClaudeClient(config);
         var executor = new ActionExecutor();
-
+        var agent = new Agent(client, executor, history);
         while (true)
         {
             Console.Write("> ");
@@ -26,29 +27,11 @@ internal class Program
             if (string.IsNullOrWhiteSpace(input))
                 continue;
 
-            if (input == "sair")
+            if (input.Trim().ToLower() == "sair")
                 break;
 
-            var prompt = MainPrompt.Build(
-                input,
-                Environment.UserName,
-                history.FormatRecent(5),
-                executor.PastaAtual
-            );
-
-            var aiResponse = await client.AskAsync(
-                prompt,
-                CancellationToken.None
-            );
-
-            var resultado = await executor.ExecuteAsync(
-                aiResponse,
-                CancellationToken.None
-            );
-
-            Console.WriteLine(resultado);
-
-            history.Add(input, resultado);
+            var resposta = await agent.ProcessAsync(input, CancellationToken.None);
+            Console.WriteLine(resposta);
         }
 
         history.Save();
