@@ -1,0 +1,10 @@
+bin/
+obj/
+.vs/
+
+*.user
+*.suo
+
+config.json
+historico.json
+project_memory.json
