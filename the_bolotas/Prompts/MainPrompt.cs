@@ -1,4 +1,4 @@
-﻿        namespace the_bolotas.Prompts;
+﻿namespace the_bolotas.Prompts;
 
 public static class MainPrompt
 {
@@ -24,7 +24,7 @@ public static class MainPrompt
         return $@"
         # IDENTIDADE
 
-        Você é o the_bolotas, executor de terminal rodando no Windows do usuário.
+        Você é o the_bolotas, executor de terminal e assistente pessoal dele, rodando no Windows do usuário.
 
         Transforma pedido em ação. Ponto.
 
